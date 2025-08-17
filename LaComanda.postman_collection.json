@@ -1,0 +1,2002 @@
+{
+	"info": {
+		"_postman_id": "534a1eb3-d29e-411f-bde7-3d6e7f684a45",
+		"name": "LaComanda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37772701"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Logins",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let token = pm.response.json().token;\r",
+											"pm.environment.set(\"token\", token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "usuario",
+											"value": "Socio1",
+											"type": "text"
+										},
+										{
+											"key": "contraseña",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Socio",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let token = pm.response.json().token;\r",
+											"pm.environment.set(\"token\", token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "Socio1",
+											"type": "text"
+										},
+										{
+											"key": "contraseña",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mozo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let token = pm.response.json().token;\r",
+											"pm.environment.set(\"token\", token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "Mozo1",
+											"type": "text"
+										},
+										{
+											"key": "contraseña",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cocinero",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let token = pm.response.json().token;\r",
+											"pm.environment.set(\"token\", token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "Cocinero1",
+											"type": "text"
+										},
+										{
+											"key": "contraseña",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bartender",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let token = pm.response.json().token;\r",
+											"pm.environment.set(\"token\", token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "Bartender1",
+											"type": "text"
+										},
+										{
+											"key": "contraseña",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cervecero",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let token = pm.response.json().token;\r",
+											"pm.environment.set(\"token\", token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "usuario",
+											"value": "Cervecero1",
+											"type": "text"
+										},
+										{
+											"key": "contraseña",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Raul"
+								},
+								{
+									"key": "clave",
+									"value": "likina1"
+								},
+								{
+									"key": "tipo",
+									"value": "cocineros"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:666/usuario?nombre=Agustin&clave=likina1&tipo=cocineros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "666",
+							"path": [
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Agustin"
+								},
+								{
+									"key": "clave",
+									"value": "likina1"
+								},
+								{
+									"key": "tipo",
+									"value": "cocineros"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "nombre",
+								"value": "AleCervecero"
+							},
+							{
+								"key": "estado",
+								"value": "suspendido"
+							},
+							{
+								"key": "tipo",
+								"value": "cervecero",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "AleCervecero"
+								},
+								{
+									"key": "estado",
+									"value": "suspendio"
+								},
+								{
+									"key": "tipo",
+									"value": "cocinero",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuario/modificar?nombre=AleCervecero&estado=suspendido&tipo=cervecero",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"modificar"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "AleCervecero"
+								},
+								{
+									"key": "estado",
+									"value": "suspendido"
+								},
+								{
+									"key": "tipo",
+									"value": "cervecero"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/borrar/38",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"borrar",
+								"38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Operaciones Sector",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/operationsByRole",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"operationsByRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Operaciones Usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuario/operaciones",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"operaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dias De Ingreso",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuario/ingreso?nombre=agusMozo",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"ingreso"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "agusMozo"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mesas",
+			"item": [
+				{
+					"name": "Alta Mesa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "estado",
+									"value": "cerrada"
+								},
+								{
+									"key": "numero",
+									"value": "37",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/mesa?estado=abierta&numero=60",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "abierta"
+								},
+								{
+									"key": "numero",
+									"value": "60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Mesas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mas Usada",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/masUsada",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"masUsada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menos Facturo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/facturacion",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"facturacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Faturacion Entre Fechas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/facturacionFechas?id_mesa=37&fecha1=2025-02-08&fecha2=2025-02-18",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"facturacionFechas"
+							],
+							"query": [
+								{
+									"key": "id_mesa",
+									"value": "37"
+								},
+								{
+									"key": "fecha1",
+									"value": "2025-02-08"
+								},
+								{
+									"key": "fecha2",
+									"value": "2025-02-18"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Mesa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_mesa\" : 1,\r\n    \"estado\" : \"cerrada\",\r\n    \"numero\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/mesa/modificar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"modificar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Mesa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/borrar/38",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"borrar",
+								"38"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ordenes",
+			"item": [
+				{
+					"name": "Tomar orden",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_mesa",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "productos",
+									"value": "[\n        {\"producto\": \"golden\", \"cantidad\": 3},\n        {\"producto\": \"rabas\", \"cantidad\": 2}\n    ]",
+									"type": "text"
+								},
+								{
+									"key": "cliente_nombre",
+									"value": "luciano",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vincular imagen",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								},
+								{
+									"key": "Imagen",
+									"type": "file",
+									"src": "postman-cloud:///1ef3a965-0fa6-4fb0-95af-bff6555464d2"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/imagen",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"imagen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Demora",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/demora?codigo=SCT5W&mesa=3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"demora"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "SCT5W"
+								},
+								{
+									"key": "mesa",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado de Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orden/lista",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"lista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar ordenes por Rol",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/ventas/rol",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ventas",
+								"rol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comenzar Preparacion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10,\r\n  \"demora\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/preparar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"preparar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finalizar Preparacion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/preparar/finalizar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"preparar",
+								"finalizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servir Pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigo\": \"T736S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/servir",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"servir"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servir Pedido Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigo\": \"T736S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/servir",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"servir"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cobrar Orden",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\" : \"T736S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/cobrar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"cobrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entregadas Tarde",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/tarde",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"tarde"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entregadas a Tiempo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/demora?codigo=SCT5W&mesa=3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"demora"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "SCT5W"
+								},
+								{
+									"key": "mesa",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Carta Productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/producto",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menos Vendidos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseURL}}/producto/menosVendido",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"producto",
+								"menosVendido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cargar Producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "corona",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "8000",
+									"type": "text"
+								},
+								{
+									"key": "area_preparacion",
+									"value": "cervecero",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/producto",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"producto"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Mesa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/producto/borrar/38",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"producto",
+								"borrar",
+								"38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"corona\",\r\n    \"precio\" : 8000,\r\n    \"area_preparacion\" : \"cervecero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/producto/modificar?nombre=corona&precio=8000&area_preparacion=cervecero",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"producto",
+								"modificar"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "corona"
+								},
+								{
+									"key": "precio",
+									"value": "8000"
+								},
+								{
+									"key": "area_preparacion",
+									"value": "cervecero"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Archivos",
+			"item": [
+				{
+					"name": "DescargarCSV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/descargar/csv",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"descargar",
+								"csv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descargar Logo PDF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/descargar/logoPDF",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"descargar",
+								"logoPDF"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Encuestas",
+			"item": [
+				{
+					"name": "Encuesta Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "T736S",
+									"type": "text"
+								},
+								{
+									"key": "id_mesa",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "mesa",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "restaurante",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "mozo",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "cocinero",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comentario",
+									"value": "Muy rico todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/encuesta",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"encuesta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mejores Encuestas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/encuesta/mejores?cantidad=3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"encuesta",
+								"mejores"
+							],
+							"query": [
+								{
+									"key": "cantidad",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Corrección",
+			"item": [
+				{
+					"name": "1 - Mozo toma un pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_mesa\": \"1\",\n    \"cliente_nombre\": \"Alejo\",\n    \"productos\": [\n        {\"producto\": \"milanesa\", \"cantidad\": 1},\n          {\"producto\": \"hamburguesa de garbanzo\", \"cantidad\": 1},\n          {\"producto\": \"corona\", \"cantidad\":2},\n          {\"producto\": \"daikiri\", \"cantidad\": 1}\n\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 - Vincular imagen con pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "T736S",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/Users/alejofalcone/Downloads/App Icon (1) (1).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/imagen",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"imagen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 - Listar todos los productos pendientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/ventas/rol",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ventas",
+								"rol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 - Comenzar a preparar producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 11,\n  \"demora\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/preparar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"preparar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4 - Ver tiempo de demora",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orden/demora?codigo=T736S&mesa=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"demora"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "T736S"
+								},
+								{
+									"key": "mesa",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5 - Socio pide lista de pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orden/lista",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"lista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6 - Listar todos los productos pendientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/ventas/rol",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ventas",
+								"rol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6 - Cambiar el estado a “listo para servir”",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/preparar/finalizar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"preparar",
+								"finalizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7 - Listado de Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orden/lista",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"lista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7 - Servir Pedido Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigo\": \"T736S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/servir",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"servir"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8 - Socio pide el listado de las mesas y sus estados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9 - Mozo cobra la orden",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\" : \"T736S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/cobrar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"cobrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10 - Socio cierra la mesa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_mesa\" : 30,\r\n    \"estado\" : \"abierta\",\r\n    \"numero\" : 37\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/mesa/modificar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"modificar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11 - Cliente carga encuesta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "T736S",
+									"type": "text"
+								},
+								{
+									"key": "id_mesa",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "mesa",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "restaurante",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "mozo",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "cocinero",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comentario",
+									"value": "Muy rico todo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/encuesta",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"encuesta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 - Socio pide los mejores comentarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "DC2K8",
+									"type": "text"
+								},
+								{
+									"key": "id_mesa",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "mesa",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "restaurante",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "mozo",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "cocinero",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comentario",
+									"value": "dfdgfgdfgdfdgg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/encuesta/mejores?cantidad=3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"encuesta",
+								"mejores"
+							],
+							"query": [
+								{
+									"key": "cantidad",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 - Socio pide la mesa más usada",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/mesa/masUsada",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"mesa",
+								"masUsada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14 - Socio pide ordenes entregadas a tiempo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/aTiempo",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"aTiempo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15 - Socio pide ordenes entregadas tarde",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "UMYRH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/orden/tarde",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orden",
+								"tarde"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8000",
+			"type": "default"
+		}
+	]
+}
