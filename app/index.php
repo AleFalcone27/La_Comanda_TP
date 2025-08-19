@@ -18,11 +18,13 @@ $app = AppFactory::create();
 
 $app->addErrorMiddleware(true, true, true);
 
+// Hooks login
+
 $app->group('/login', function (RouteCollectorProxy $group) {
   $group->post('[/]', \JwtControles::class . ':TokenLogin');
 });
 
-// Handlers Usuario
+// Hooks usuario
 $app->group('/usuario', function (RouteCollectorProxy $group) {
     $group->get('[/]', \UsuarioControles::class . ':TraerTodos');
     $group->post('[/]', \UsuarioControles::class . ':CargarUno');
@@ -34,7 +36,7 @@ $app->group('/usuario', function (RouteCollectorProxy $group) {
   })->add(new AccesoMiddleware([ Roles::SOCIO->value ]));
 
 
-// Handlers Producto
+// Hooks producto
 $app->group('/producto', function (RouteCollectorProxy $group) {
   $group->get('[/]', \ProductoControles::class . ':TraerTodos');
   $group->post('[/]', \ProductoControles::class . ':CargarUno')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::COCINERO->value]));
@@ -43,7 +45,7 @@ $app->group('/producto', function (RouteCollectorProxy $group) {
   $group->delete('/borrar/{id_producto}', \ProductoControles::class . ':BorrarUno')->add(new AccesoMiddleware([Roles::SOCIO->value,]));
 });
 
-// Handlers Orden
+// Hooks orden
 $app->group('/orden', function (RouteCollectorProxy $group) {
   $group->get('[/]', \OrdenControles::class . ':TraerTodos')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->post('[/]', \OrdenControles::class . ':CargarUno')->add(new AccesoMiddleware([Roles::MOZO->value]));
@@ -56,13 +58,13 @@ $app->group('/orden', function (RouteCollectorProxy $group) {
   $group->get('/aTiempo', \OrdenControles::class . ':OrdenesEntregadasATiempo')->add(new AccesoMiddleware([Roles::SOCIO->value]));
 });
 
-// Handlers Ventas
+// Hooks ventas
 $app->group('/ventas', function (RouteCollectorProxy $group) {
   $group->get('[/]', \VentaControles::class . ':TraerTodos')->add(new AccesoMiddleware([Roles::SOCIO->value]));
   $group->get('/rol', \VentaControles::class . ':TraerVentasRol')->add(new RolMiddleware());
 });
 
-// Handlers Mesa
+// Hooks Mesa
 $app->group('/mesa', function(RouteCollectorProxy $group){
   $group->post('[/]', \MesaControles::class . ':CargarUno')->add(new AccesoMiddleware([Roles::SOCIO->value]));
   $group->put('/modificar', \MesaControles::class . ':ModificarUno')->add(new RolMiddleware());
@@ -73,17 +75,20 @@ $app->group('/mesa', function(RouteCollectorProxy $group){
   $group->delete('/borrar/{id_mesa}', \MesaControles::class . ':BorrarUno')->add(new AccesoMiddleware([Roles::SOCIO->value]));
 });
 
+// Hooks acciones
 $app->group('/preparar', function (RouteCollectorProxy $group) {
   $group->put('[/]', \UsuarioControles::class . ':ComezarAPreparar')->add(new RolMiddleware());
   $group->put('/finalizar', \UsuarioControles::class . ':FinalizarPreparacion')->add(new RolMiddleware());
 });
 
+// Hooks archivos
 $app->group('/descargar', function (RouteCollectorProxy $group) {
   $group->get('/csv', function ($request, $response, $args){ return descargarCSV($request, $response, $args);})->add(new AccesoMiddleware([Roles::SOCIO->value]));
   $group->post('/csv', function ($request, $response, $args){ return cargarCSV($request, $response, $args);})->add(new AccesoMiddleware([Roles::SOCIO->value]));
   $group->get('/logoPDF', function ($request, $response, $args){ return LogoPDfDescarga($request, $response, $args);})->add(new AccesoMiddleware([Roles::SOCIO->value]));
 });
 
+// Hooks encuestas
 $app->group('/encuesta', function (RouteCollectorProxy $group) {
   $group->post('[/]', \EncuestaControles::class . ':CargarUno');
   $group->get('/mejores', \EncuestaControles::class . ':MejoresEncuestas')->add(new AccesoMiddleware([Roles::SOCIO->value]));
