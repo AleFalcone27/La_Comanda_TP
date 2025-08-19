@@ -80,6 +80,7 @@ $app->group('/preparar', function (RouteCollectorProxy $group) {
 
 $app->group('/descargar', function (RouteCollectorProxy $group) {
   $group->get('/csv', function ($request, $response, $args){ return descargarCSV($request, $response, $args);})->add(new AccesoMiddleware(["socio"]));
+  $group->post('/csv', function ($request, $response, $args){ return cargarCSV($request, $response, $args);})->add(new AccesoMiddleware(["socio"]));
   $group->get('/logoPDF', function ($request, $response, $args){ return LogoPDfDescarga($request, $response, $args);})->add(new AccesoMiddleware(["socio"]));
 });
 
