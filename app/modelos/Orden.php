@@ -28,12 +28,6 @@ class Orden{
         $consulta->bindValue(':fecha', $this->fecha);
         $consulta->execute();
 
-        // try{
-        //     guardarImagen('../ImagenesDeOrdenes/', $this->codigo);
-        // }
-        // catch(Exception $ex){
-        //     echo $ex->getMessage();
-        // }
 
         return $objAccesoDatos->obtenerUltimoId();
     }
