@@ -24,7 +24,6 @@ function LogoPDfDescarga($request, $response, $args) {
 
         $response = $response->withHeader('Content-Type', 'application/pdf')->withHeader('Content-Disposition', 'attachment; filename="logo.pdf"');
 
-        // Generar y enviar el PDF como respuesta
         $pdf->Output('D');
 
         return $response;
