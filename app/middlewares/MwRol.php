@@ -44,7 +44,7 @@ class RolMiddleware{
         } catch (Exception $e) {
             $response = $responseFactory->createResponse();
             $response = $response->withHeader('Content-Type', 'application/json');
-            $response->getBody()->write(json_encode(['error' => 'Token inválido', 'message' => $e->getMessage()]));
+            $response->getBody()->write(json_encode(['message' => $e->getMessage()]));
             return $response->withStatus(401);
         }
     }
