@@ -1,6 +1,6 @@
 <?php
 
-function LogoPDfDescarga($request, $response, $args) {
+function LogoPDFDescarga($request, $response, $args) {
     
     try {
         $pdf = new FPDF();
