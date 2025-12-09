@@ -48,12 +48,12 @@ $app->group('/producto', function (RouteCollectorProxy $group) {
 // Hooks orden
 $app->group('/orden', function (RouteCollectorProxy $group) {
   $group->get('[/]', \OrdenControles::class . ':TraerTodos')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
-  $group->post('[/]', \OrdenControles::class . ':CargarUno')->add(new AccesoMiddleware([Roles::MOZO->value]));
-  $group->post('/imagen', \OrdenControles::class . ':AgregarImagen')->add(new AccesoMiddleware([Roles::MOZO->value]));
+  $group->post('[/]', \OrdenControles::class . ':CargarUno')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
+  $group->post('/imagen', \OrdenControles::class . ':AgregarImagen')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->get('/demora', \OrdenControles::class . ':DemoraOrden');
   $group->get('/lista', \OrdenControles::class . ':ListaOrdenes')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::MOZO->value,Roles::BARTENDER->value, Roles::COCINERO->value]));
-  $group->put('/servir', \OrdenControles::class . ':ServirOrden')->add(new AccesoMiddleware([Roles::MOZO->value]));
-  $group->put('/cobrar', \OrdenControles::class . ':CobrarOrden')->add(new AccesoMiddleware([Roles::MOZO->value]));
+  $group->put('/servir', \OrdenControles::class . ':ServirOrden')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
+  $group->put('/cobrar', \OrdenControles::class . ':CobrarOrden')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->get('/tarde', \OrdenControles::class . ':OrdenesEntregadasTarde')->add(new AccesoMiddleware([Roles::SOCIO->value]));
   $group->get('/aTiempo', \OrdenControles::class . ':OrdenesEntregadasATiempo')->add(new AccesoMiddleware([Roles::SOCIO->value]));
 });
