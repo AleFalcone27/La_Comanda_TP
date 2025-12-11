@@ -81,11 +81,15 @@ $app->group('/preparar', function (RouteCollectorProxy $group) {
   $group->put('/finalizar', \UsuarioControles::class . ':FinalizarPreparacion')->add(new RolMiddleware([Roles::MOZO->value]));
 });
 
-// Hooks archivos
+// Hooks descarga archivos 
 $app->group('/descargar', function (RouteCollectorProxy $group) {
-  $group->get('/csv', function ($request, $response, $args){ return descargarCSV($request, $response, $args);})->add(new AccesoMiddleware([Roles::SOCIO->value]));
-  $group->post('/csv', function ($request, $response, $args){ return cargarCSV($request, $response, $args);})->add(new AccesoMiddleware([Roles::SOCIO->value]));
-  $group->get('/logoPDF', function ($request, $response, $args){ return LogoPDFDescarga($request, $response, $args);})->add(new AccesoMiddleware([Roles::SOCIO->value]));
+  $group->get('/csv', function ($request, $response, $args){ return descargarCSV($request, $response, $args);})->add(new RolMiddleware([Roles::SOCIO->value]));
+  $group->get('/logoPDF', function ($request, $response, $args){ return LogoPDFDescarga($request, $response, $args);})->add(new RolMiddleware([Roles::SOCIO->value]));
+});
+
+// Hooks carga archivos
+$app->group('/cargar', function (RouteCollectorProxy $group) {
+  $group->post('/csv', function ($request, $response, $args){ return cargarCSV($request, $response, $args);})->add(new RolMiddleware([Roles::SOCIO->value]));
 });
 
 // Hooks encuestas
