@@ -56,7 +56,7 @@ class MesaControles extends Mesa implements IApiUsable{
         else{
             if(Mesa::existeMesa($id_mesa) &&  in_array($estado, $estados)){
                 if(Mesa::modificarMesa($id_mesa ,$estado)){
-                    $payload = json_encode(array("Exito" => "Mesa modificado correctamente"));
+                    $payload = json_encode(array("Exito" => "Mesa modificada correctamente"));
                 }
                 else{
                     $payload = json_encode(array("Error" => "La mesa no se ha modificado"));
