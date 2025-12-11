@@ -90,7 +90,7 @@ class ProductoControles extends Producto implements IApiUsable{
         $ventasArray = [];
 
         foreach ($productosVendidos as $venta) {
-            $ventasArray[$venta['producto']] = $venta['total_vendido'];
+            $ventasArray[$venta['producto']] = (int)$venta['total_vendido'];
         }
 
         $productosOrdenados = [];
@@ -102,10 +102,10 @@ class ProductoControles extends Producto implements IApiUsable{
         }
 
         usort($productosOrdenados, function($a, $b) {
-            return $a['total_vendido'] <=> $b['total_vendido'];
+            return $b['total_vendido'] <=> $a['total_vendido'];
         });
 
-        $payload = json_encode(array("Carta" =>  $productosOrdenados));
+        $payload = json_encode(array("ProductosDelMasAlMenosVendido" =>  $productosOrdenados));
 
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');

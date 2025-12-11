@@ -40,7 +40,7 @@ $app->group('/usuario', function (RouteCollectorProxy $group) {
 $app->group('/producto', function (RouteCollectorProxy $group) {
   $group->get('[/]', \ProductoControles::class . ':TraerTodos');
   $group->post('[/]', \ProductoControles::class . ':CargarUno')->add(new AccesoMiddleware([Roles::SOCIO->value, Roles::COCINERO->value]));
-  $group->get('/menosVendido', \ProductoControles::class . ':TraerOrdenados')->add(new AccesoMiddleware([Roles::SOCIO->value,]));
+  $group->get('/masVendido', \ProductoControles::class . ':TraerOrdenados')->add(new AccesoMiddleware([Roles::SOCIO->value,]));
   $group->put('/modificar', \ProductoControles::class . ':ModificarUno')->add(new AccesoMiddleware([Roles::SOCIO->value,]));
   $group->delete('/borrar/{id_producto}', \ProductoControles::class . ':BorrarUno')->add(new AccesoMiddleware([Roles::SOCIO->value,]));
 });
