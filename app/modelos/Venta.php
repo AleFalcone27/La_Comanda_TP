@@ -132,7 +132,7 @@ class Venta{
         $consulta->execute();
         
         if($consulta->rowCount() > 0){
-            return json_encode(['message' => 'Se ha actualizado el estado a entregado']);
+            return ['message' => 'Se ha actualizado el estado a entregado'];
         }
          return json_encode(['Error' => 'No se pudo actualizar el estado']);
     }

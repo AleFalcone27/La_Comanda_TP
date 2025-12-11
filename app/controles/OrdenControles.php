@@ -142,7 +142,7 @@ class OrdenControles extends Orden{
             $mensaje = Venta::servir($codigo);
             Orden::servir($codigo);
             if(Mesa::modificarMesa(Orden::obtenerMesa($codigo), "con cliente comiendo")){
-                $payload = json_encode(array("Orden" => $mensaje));
+                $payload = json_encode(["Orden" => $mensaje]);
             }
             else{
                 $payload = json_encode(array("Error" => "No se puede actualizar la mesa"));
