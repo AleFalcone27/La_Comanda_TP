@@ -90,7 +90,7 @@ class Mesa{
 
     public static function ordenadasPorFacturacion(){
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("SELECT id_mesa, COALESCE(MIN(cuenta), 0) AS facturacionBarata FROM orden GROUP BY id_mesa ORDER BY facturacionBarata ASC");
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT id_mesa, COALESCE(SUM(cuenta), 0) AS facturacionBarataFROM ordenGROUP BY id_mesa ORDER BY facturacionBarata ASC;");
         $consulta->execute();
 
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
