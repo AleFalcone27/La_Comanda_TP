@@ -37,7 +37,7 @@ class OrdenControles extends Orden{
                 $venta->altaVenta();
             }
         } else {
-            $payload = json_encode(array("Error" => "Formato de productos inválido ,o la mesa no está disponible"));
+            $payload = json_encode(array("Error" => "Formato de productos inválido o la mesa no está disponible"));
             $response->getBody()->write($payload);
             return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
         }
