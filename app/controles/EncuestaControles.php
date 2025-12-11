@@ -63,10 +63,8 @@ public static function MejoresEncuestas($request, $response, $args){
     $cantidad = $parametros['cantidad'];
     $encuestas = Encuesta::obtenerEncuestasOrdenadas();
 
-    // Contar cuántas encuestas vinieron
     $totalEncuestas = count($encuestas);
 
-    // Si hay menos encuestas que la cantidad pedida, ajustar
     $cantidad = min($cantidad, $totalEncuestas);
 
     $mejoresEncuestas = array();
