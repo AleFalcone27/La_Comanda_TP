@@ -50,7 +50,7 @@ $app->group('/orden', function (RouteCollectorProxy $group) {
   $group->post('[/]', \OrdenControles::class . ':CargarUno')->add(new RolMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->post('/imagen', \OrdenControles::class . ':AgregarImagen')->add(new RolMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->get('/demora', \OrdenControles::class . ':DemoraOrden');
-  $group->get('/lista', \OrdenControles::class . ':ListaOrdenes')->add(new RolMiddleware([Roles::SOCIO->value, Roles::MOZO->value,Roles::BARTENDER->value, Roles::COCINERO->value]));
+  $group->get('/lista', \OrdenControles::class . ':ListaOrdenes')->add(new RolMiddleware([Roles::SOCIO->value,Roles::MOZO->value]));
   $group->put('/servir', \OrdenControles::class . ':ServirOrden')->add(new RolMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->put('/cobrar', \OrdenControles::class . ':CobrarOrden')->add(new RolMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->get('/tarde', \OrdenControles::class . ':OrdenesEntregadasTarde')->add(new RolMiddleware([Roles::SOCIO->value]));
@@ -76,8 +76,8 @@ $app->group('/mesa', function(RouteCollectorProxy $group){
 
 // Hooks acciones
 $app->group('/preparar', function (RouteCollectorProxy $group) {
-  $group->put('[/]', \UsuarioControles::class . ':ComezarAPreparar')->add(new RolMiddleware([Roles::MOZO->value]));
-  $group->put('/finalizar', \UsuarioControles::class . ':FinalizarPreparacion')->add(new RolMiddleware([Roles::MOZO->value]));
+  $group->put('[/]', \UsuarioControles::class . ':ComezarAPreparar')->add(new RolMiddleware([Roles::COCINERO->value,Roles::BARTENDER->value,Roles::CERVERCERO->value]));
+  $group->put('/finalizar', \UsuarioControles::class . ':FinalizarPreparacion')->add(new RolMiddleware([Roles::COCINERO->value,Roles::BARTENDER->value,Roles::CERVERCERO->value]));
 })->add(New AccesoMiddleware());
 
 // Hooks descarga archivos 
