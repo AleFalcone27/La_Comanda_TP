@@ -27,16 +27,8 @@ class RolMiddleware{
 
         $header = $request->getHeaderLine('Authorization');
 
-        if($header){
-            $token = trim(explode("Bearer", $header)[1]);
-        }
-        
-        if (!$token) {
-            $response = $responseFactory->createResponse();
-            $response = $response->withHeader('Content-Type', 'application/json');
-            $response->getBody()->write(json_encode(['Error' => 'Token no proporcionado']));
-            return $response->withStatus(401);
-        }
+        $token = trim(explode("Bearer", $header)[1]);
+ 
         try {     
             $data = AutentificadorJWT::ObtenerData($token);
             
