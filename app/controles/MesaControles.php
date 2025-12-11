@@ -96,7 +96,7 @@ class MesaControles extends Mesa implements IApiUsable{
     public static function MenosFacturo($request, $response, $args){
 
         $mesa = Mesa::ordenadasPorFacturacion();
-        $payload = json_encode(array("Mesas Facturacion Dsc" => $mesa));
+        $payload = json_encode(array("Mesas facturación Desc" => $mesa));
 
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');
