@@ -120,6 +120,8 @@ class MesaControles extends Mesa implements IApiUsable{
                 $payload = json_encode(array("Facturacion" => "No hay facturaciones registradas en entre esas fechas"));
             }else{
 
+                $facturacion['total_facturacion'] = (int)$facturacion['total_facturacion'];
+
                 $payload = json_encode(array("Facturacion" => $facturacion));
             }
 
