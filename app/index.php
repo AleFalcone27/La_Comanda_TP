@@ -32,7 +32,7 @@ $app->group('/usuario', function (RouteCollectorProxy $group) {
     $group->get('/operaciones', \UsuarioControles::class . ':obtenerOperaciones');
     $group->get('/operacionesSector', \UsuarioControles::class . ':obtenerOperacionesPorSector');
     $group->delete('/borrar/{id_usuario}', \UsuarioControles::class . ':BorrarUno');
-  })->add(new RolMiddleware([ Roles::SOCIO->value ]));
+  })->add(new RolMiddleware([ Roles::SOCIO->value ]))->add(New AccesoMiddleware());
 
 
 // Hooks producto
@@ -42,7 +42,7 @@ $app->group('/producto', function (RouteCollectorProxy $group) {
   $group->get('/masVendido', \ProductoControles::class . ':TraerOrdenados')->add(new RolMiddleware([Roles::SOCIO->value,]));
   $group->put('/modificar', \ProductoControles::class . ':ModificarUno')->add(new RolMiddleware([Roles::SOCIO->value,]));
   $group->delete('/borrar/{id_producto}', \ProductoControles::class . ':BorrarUno')->add(new RolMiddleware([Roles::SOCIO->value,]));
-});
+})->add(New AccesoMiddleware());
 
 // Hooks orden
 $app->group('/orden', function (RouteCollectorProxy $group) {
@@ -55,13 +55,13 @@ $app->group('/orden', function (RouteCollectorProxy $group) {
   $group->put('/cobrar', \OrdenControles::class . ':CobrarOrden')->add(new RolMiddleware([Roles::SOCIO->value, Roles::MOZO->value]));
   $group->get('/tarde', \OrdenControles::class . ':OrdenesEntregadasTarde')->add(new RolMiddleware([Roles::SOCIO->value]));
   $group->get('/aTiempo', \OrdenControles::class . ':OrdenesEntregadasATiempo')->add(new RolMiddleware([Roles::SOCIO->value]));
-});
+})->add(New AccesoMiddleware());
 
 // Hooks ventas
 $app->group('/ventas', function (RouteCollectorProxy $group) {
   $group->get('[/]', \VentaControles::class . ':TraerTodos')->add(new RolMiddleware([Roles::SOCIO->value]));
-  $group->get('/rol', \VentaControles::class . ':TraerVentasRol')->add(new RolMiddleware([Roles::SOCIO->value]));
-});
+  $group->get('/rol', \VentaControles::class . ':TraerVentasRol')->add(new RolMiddleware([Roles::SOCIO->value,Roles::COCINERO->value,Roles::BARTENDER->value,Roles::CERVERCERO->value]));
+})->add(New AccesoMiddleware());
 
 // Hooks Mesa
 $app->group('/mesa', function(RouteCollectorProxy $group){
@@ -72,29 +72,29 @@ $app->group('/mesa', function(RouteCollectorProxy $group){
   $group->get('/facturacion', \MesaControles::class . ':MenosFacturo')->add(new RolMiddleware([Roles::SOCIO->value]));
   $group->get('/facturacionFechas', \MesaControles::class . ':FacturoFechas')->add(new RolMiddleware([Roles::SOCIO->value]));
   $group->delete('/borrar/{id_mesa}', \MesaControles::class . ':BorrarUno')->add(new RolMiddleware([Roles::SOCIO->value]));
-});
+})->add(New AccesoMiddleware());
 
 // Hooks acciones
 $app->group('/preparar', function (RouteCollectorProxy $group) {
   $group->put('[/]', \UsuarioControles::class . ':ComezarAPreparar')->add(new RolMiddleware([Roles::MOZO->value]));
   $group->put('/finalizar', \UsuarioControles::class . ':FinalizarPreparacion')->add(new RolMiddleware([Roles::MOZO->value]));
-});
+})->add(New AccesoMiddleware());
 
 // Hooks descarga archivos 
 $app->group('/descargar', function (RouteCollectorProxy $group) {
   $group->get('/csv', function ($request, $response, $args){ return descargarCSV($request, $response, $args);})->add(new RolMiddleware([Roles::SOCIO->value]));
   $group->get('/logoPDF', function ($request, $response, $args){ return LogoPDFDescarga($request, $response, $args);})->add(new RolMiddleware([Roles::SOCIO->value]));
-});
+})->add(New AccesoMiddleware());
 
 // Hooks carga archivos
 $app->group('/cargar', function (RouteCollectorProxy $group) {
   $group->post('/csv', function ($request, $response, $args){ return cargarCSV($request, $response, $args);})->add(new RolMiddleware([Roles::SOCIO->value]));
-});
+})->add(New AccesoMiddleware());
 
 // Hooks encuestas
 $app->group('/encuesta', function (RouteCollectorProxy $group) {
   $group->post('[/]', \EncuestaControles::class . ':CargarUno');
   $group->get('/mejores', \EncuestaControles::class . ':MejoresEncuestas')->add(new RolMiddleware([Roles::SOCIO->value]));
-});
+})->add(New AccesoMiddleware());
 
 $app->run();
