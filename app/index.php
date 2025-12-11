@@ -19,7 +19,6 @@ $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
 
 // Hooks login
-
 $app->group('/login', function (RouteCollectorProxy $group) {
   $group->post('[/]', \JwtControles::class . ':TokenLogin');
 });
