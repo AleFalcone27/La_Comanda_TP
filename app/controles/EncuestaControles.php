@@ -72,6 +72,7 @@ public static function MejoresEncuestas($request, $response, $args){
     $mejoresEncuestas = array();
 
     for ($i = 0; $i < $cantidad; $i++) {
+        $encuestas[$i]["promedio"] = (double)$encuestas[$i]["promedio"];
         $mejoresEncuestas[] = $encuestas[$i];
     }
 
